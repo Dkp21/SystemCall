@@ -2,6 +2,6 @@
 Demonstrate system calls use
 
 # timer_test.cpp
-  - Demonstrate use "settimer" primarily
+  - Demonstrate use of "settimer" system call.
   - To compile this file use 
     * g++ timer_test.cpp
