@@ -1,17 +1,27 @@
 #include <iostream>
+#include <cstdio>
 #include <sys/time.h>
 #include <cstring>
 #include <cerrno>
 #include <csignal>
 #include <unistd.h>
+#include <ctime>
 
 static void handleTimer(int sig)
 {
+    time_t t;
+
+    char buf[256];
+
+    time(&t);
+
+    snprintf(buf, strlen(ctime(&t)), "%s", ctime(&t));
+
     switch(sig)
     {
         case SIGALRM:
         {
-            std::cout << "Timer Expired" << std::endl;
+            std::cout << buf << " : Timer Expired" << std::endl;
         }
         break;
 
